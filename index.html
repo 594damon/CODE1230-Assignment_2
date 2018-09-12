@@ -25,31 +25,32 @@ var map = new mapboxgl.Map({
 });
 
 map.on('load', function() {
-map.addLayer({
-"id": "data",
-"type": "fill-extrusion",
-"source": {
-'type': 'geojson',
-'data': data
-},
-'paint': {
-'fill-extrusion-color' : {
-'property': 'M/F R"',
-"stops":[
-[0, 'white'],
-[100, 'orange']
-]
-},
-'fill-extrusion-height' : {
-'property': 'MARRIED',
-"stops":[
-[0, 0],
-[500, 1000]
-]
-},
-'fill-extrusion-opacity': 1
-}
-});
+
+    map.addLayer({
+        "id": "data",
+        "type": "fill-extrusion",
+        "source": {
+            'type': 'geojson',
+            'data': data
+        },
+            'paint': {
+                'fill-extrusion-color' : {
+                    'property': 'M/F_R"',
+                    "stops":[
+                        [0, 'white'],
+                            [100, 'orange']
+                    ]
+                },
+                'fill-extrusion-height' : {
+                    'property': 'MARRIED',
+                    "stops":[
+                        [0, 0],
+                        [2500, 1000]
+                    ]
+                },
+                'fill-extrusion-opacity': 1
+            }
+    });
 });
 
 
