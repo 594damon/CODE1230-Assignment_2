@@ -3,9 +3,9 @@
 <head>
     <meta charset='utf-8' />
     <title>Display a map</title>
+    <script src='./data.js'></script>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.js'></script>
-    <script src='./data.js'></script>>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.css' rel='stylesheet' />
     <style>
         body { margin:0; padding:0; }
@@ -19,40 +19,39 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiNTk0ZGFtb24iLCJhIjoiY2pseGU3Y2M2MDlqejNycjU1Njd0bmZnaiJ9.1w5e3UwI9UdpiyL92pdVBg';
 var map = new mapboxgl.Map({
     container: 'map', // container id
-    style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
+    style: 'mapbox://styles/mapbox/light-v9', // stylesheet location
     center: [151.004105, -33.813002], // starting position [lng, lat]
     zoom: 9 // starting zoom
-    pitch: 45
-    bearing:-17.6
 });
-map.on('load', function() {
 
-    map.addLayer({
-        "id": "data",
-        "type": "fill-extrusion",
-        "source": {
-            'type': 'geojson',
-            'data': data
-        },
-            'paint': {
-                'fill-extrusion-color' : {
-                    'property': '2016',
-                    "stops":[
-                        [0, 'white'],
-                        [50, 'orange']
-                    ]
-                },
-                'fill-extrusion-height' : {
-                    'property': 'Difference',
-                    "stops":[
-                        [0.2, 0],
-                        [1, 50000]
-                    ]
-                },
-                'fill-extrusion-opacity': 1
-            }
-    });
+map.on('load', function() {
+map.addLayer({
+"id": "data",
+"type": "fill-extrusion",
+"source": {
+'type': 'geojson',
+'data': data
+},
+'paint': {
+'fill-extrusion-color' : {
+'property': 'M/F R"',
+"stops":[
+[0, 'white'],
+[100, 'orange']
+]
+},
+'fill-extrusion-height' : {
+'property': 'MARRIED',
+"stops":[
+[0, 0],
+[500, 1000]
+]
+},
+'fill-extrusion-opacity': 1
+}
 });
+});
+
 
 </script>
 
