@@ -34,15 +34,14 @@ map.on('load', function() {
             'data': data
         },
             'paint': {
-                'fill-extrusion-color' : 
-                {
+                'fill-extrusion-color' : {
+                    'property': 'MFR',
+                    "stops":[
+                        [0, 'white'],
+                        [10, 'red']
+                    ]
+                },
 
-                'property': 'MFR',
-                 "stops":[
-                     [0, 'black'],
-                     [90, 'white']
-                 ]
-                 },
                 'fill-extrusion-height' : {
                     'property': 'MARRIED',
                     "stops":[
