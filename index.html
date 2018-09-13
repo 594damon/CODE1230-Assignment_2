@@ -1,49 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <p>hello</p>
     <meta charset='utf-8' />
     <title>Display a map</title>
-    <script src='./data.js'></script>
+    <script src='./data2.js'></script>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.css' rel='stylesheet' />
     <style>
         body { margin:0; padding:0; }
-        #map { position:absolute; top:0; bottom:0; width:100%; }
+        #map2 { width: 50%; height:400px; float: middle; }
     </style>
+    
 </head>
 <body>
 
-<div id='map'></div>
+<div id='map2'></div>
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiNTk0ZGFtb24iLCJhIjoiY2pseGU3Y2M2MDlqejNycjU1Njd0bmZnaiJ9.1w5e3UwI9UdpiyL92pdVBg';
-var map = new mapboxgl.Map({
-    container: 'map', // container id
+var maptwo = new mapboxgl.Map({
+    container: 'map2', // container id
     style: 'mapbox://styles/mapbox/light-v9', // stylesheet location
     center: [151.004105, -33.813002], // starting position [lng, lat]
     zoom: 9 // starting zoom
 });
 
-map.on('load', function() {
+maptwo.on('load', function() {
 
-    map.addLayer({
-        "id": "data",
+    maptwo.addLayer({
+        "id": "data2",
         "type": "fill-extrusion",
         "source": {
             'type': 'geojson',
-            'data': data
+            'data': data2
         },
             'paint': {
                 'fill-extrusion-color' : {
-                    'property': 'MFR',
+                    'property': 'FEP_F',
                     "stops":[
                         [0, 'white'],
-                        [10, 'red']
+                        [1, 'orange'],
+                        [1.00001, 'red']
                     ]
                 },
 
                 'fill-extrusion-height' : {
-                    'property': 'MARRIED',
+                    'property': 'FT',
                     "stops":[
                         [0, 0],
                         [2500, 7000]
