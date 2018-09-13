@@ -1,6 +1,22 @@
 body{
 	color:#000000;
 }
+/*---------home--------*/
+.home-text-image-in{
+	position:fixed;
+	z-index: 1;
+	width：100%；
+	max-width: 2000px;
+	height:100%;
+	border: 2px solid black;
+
+}
+
+.logo{
+	float: left;
+	margin-top: 10px;
+	border: 2px solid red;
+}
 /*---------content---------*/
 /*---------mapbox---------*/
 .map {
