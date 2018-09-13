@@ -1,26 +1,115 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <p>hello</p>
     <meta charset='utf-8' />
-    <title>CODE1230-ASSIGNMENT-2</title>
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.js'></script>
+    <title>Display a map</title>
     <script src='./data.js'></script>
     <script src='./data2.js'></script>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" type="text/css" href="style.css"/>
+    </style>
 
     
 </head>
 
 <body>
-    <div class="container2
-    ">
-            <div class="row
-            ">
-                <div class="text_mainly
-                ">
-                <p>hello</p>
+    <div class="container">
+            <div class="row">
+                <div class="text_mainly">
+                    <div class="map" id="map" style='width:50%; height:400px; float:left'></div>
+                        <script>
+                        mapboxgl.accessToken = 'pk.eyJ1IjoiNTk0ZGFtb24iLCJhIjoiY2pseGU3Y2M2MDlqejNycjU1Njd0bmZnaiJ9.1w5e3UwI9UdpiyL92pdVBg';
+                        var map = new mapboxgl.Map({
+                            container: 'map', // container id
+                            style: 'mapbox://styles/mapbox/light-v9', // stylesheet location
+                            center: [151.004105, -33.813002], // starting position [lng, lat]
+                            pitch: 45,
+                            bearing: -17.6,
+                            zoom: 9 // starting zoom
+                        });
+
+                        map.on('load', function() {
+
+                            map.addLayer({
+                                "id": "data",
+                                "type": "fill-extrusion",
+                                "source": {
+                                    'type': 'geojson',
+                                    'data': data
+                                },
+                                    'paint': {
+                                        'fill-extrusion-color' : {
+                                            'property': 'MP_F',
+                                            "stops":[
+                                                [0, 'white'],
+                                                [1, 'black'],
+                                                [1.00001, 'salmon']
+                                            ]
+                                        },
+
+                                        'fill-extrusion-height' : {
+                                            'property': 'MT',
+                                            "stops":[
+                                                [0, 0],
+                                                [2042, 20420]
+                                             ]
+                                        },
+                                        'fill-extrusion-opacity': 0.7
+                                    }
+                            });
+                        });
+
+
+                    </script>
+
+                <div class="map2" id="map2" style='width:50%; height:400px; margin-left:50%'></div>
+                    <script>
+                        mapboxgl.accessToken = 'pk.eyJ1IjoiNTk0ZGFtb24iLCJhIjoiY2pseGU3Y2M2MDlqejNycjU1Njd0bmZnaiJ9.1w5e3UwI9UdpiyL92pdVBg';
+                        var maptwo = new mapboxgl.Map({
+                            container: 'map2', // container id
+                            style: 'mapbox://styles/mapbox/light-v9', // stylesheet location
+                            center: [151.004105, -33.813002], // starting position [lng, lat]
+                            pitch: 45,
+                            bearing: -17.6,
+                            zoom: 9 // starting zoom
+                        });
+
+                        maptwo.on('load', function() {
+
+                            maptwo.addLayer({
+                                "id": "data2",
+                                "type": "fill-extrusion",
+                                "source": {
+                                    'type': 'geojson',
+                                    'data': data2
+                                },
+                                    'paint': {
+                                        'fill-extrusion-color' : {
+                                            'property': 'FEP_F',
+                                            "stops":[
+                                                [0, 'white'],
+                                                [1, 'black'],
+                                                [1.00001, 'salmon']
+                                            ]
+                                        },
+
+                                        'fill-extrusion-height' : {
+                                            'property': 'FT',
+                                            "stops":[
+                                                [0, 0],
+                                                [1341, 13410]
+                                            ]
+                                        },
+                                        'fill-extrusion-opacity': 0.7
+                                    }
+                            });
+                        });
+
+
+                        </script>
                     <div class="image_left2">
                         <p>image_left2</p>
 
