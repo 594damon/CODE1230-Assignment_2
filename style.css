@@ -1,22 +1,76 @@
 body{
-	color:#000000;
+	color:#d0d3d4;
 }
 /*---------home--------*/
 .home-text-image-in{
-	position:fixed;
-	z-index: 1;
-	width：100%；
-	max-width: 2000px;
-	height:100%;
+	/*z-index: 1;*/
+	width:100%;
+	max-width: 1300px;
+	margin-right: auto;
+	margin-left: auto;
 	border: 2px solid black;
-
 }
 
 .logo{
-	float: left;
 	margin-top: 10px;
 	border: 2px solid red;
+	max-width: 200px;
 }
+
+.sect1{
+	margin-left:5px;
+    margin-right:5px;
+    border: 3px solid red;
+/*    position: absolute;*/
+}
+
+.topic1{
+	border: 2px solid gray;
+	width:500px;
+	height:200px;
+	/*float:left;*/
+}
+
+.gender-watch{
+	float:right;
+	margin-right: 300px;
+	margin-top: -250px;
+	transform: rotate(-90deg);
+}
+
+.nav-right{
+	position:fixed;
+	z-index: 100;
+	cursor:pointer;
+	border: 2px solid green;
+	width:100px;
+	height:100px;
+	right: 100px;
+	top: 65px;
+	display:table;
+	float:right;
+	position:fixed;
+}
+
+.sect2{
+	margin-left:80px;
+    margin-right:200px;
+    border: 2px solid red;
+}
+
+.author{
+	position: left;
+	margin-left:10px;
+	width:26px;
+	height:153px;
+	border: 2px solid pink;
+}
+
+
+
+
+
+
 /*---------content---------*/
 /*---------mapbox---------*/
 .map {
