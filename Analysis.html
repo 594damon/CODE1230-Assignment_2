@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <p>hello</p>
     <meta charset='utf-8' />
     <title>Display a map</title>
     <script src='./data.js'></script>
@@ -15,55 +14,64 @@
     
 </head>
 
-<body>
+<body id="ANALYSIS">
     <div class="container">
-            <div class="row">
-                <div class="text_mainly">
-                    <div class="map" id="map" style='width:50%; height:400px; float:left'></div>
-                        <script>
-                        mapboxgl.accessToken = 'pk.eyJ1IjoiNTk0ZGFtb24iLCJhIjoiY2pseGU3Y2M2MDlqejNycjU1Njd0bmZnaiJ9.1w5e3UwI9UdpiyL92pdVBg';
-                        var map = new mapboxgl.Map({
-                            container: 'map', // container id
-                            style: 'mapbox://styles/mapbox/light-v9', // stylesheet location
-                            center: [151.004105, -33.813002], // starting position [lng, lat]
-                            pitch: 45,
-                            bearing: -17.6,
-                            zoom: 9 // starting zoom
-                        });
 
-                        map.on('load', function() {
+        <nav class="nav-right">
+            <li><a id="aother" href="index.html">About</a></li>
+            <li><a id="aother" href="Analysis.html">Analysis</a></li>
+            <li><a id="aother" href="reference.html">Reference</a></li>
+        </nav>
+        <div class="row">
+            <div class="text_mainly">
 
-                            map.addLayer({
-                                "id": "data",
-                                "type": "fill-extrusion",
-                                "source": {
-                                    'type': 'geojson',
-                                    'data': data
-                                },
-                                    'paint': {
-                                        'fill-extrusion-color' : {
-                                            'property': 'MP_F',
-                                            "stops":[
-                                                [0, 'white'],
-                                                [1, 'black'],
-                                                [1.00001, 'salmon']
+                <br>
+                    <!-- text here -->
+                <div class="map" id="map" style='width:50%; height:400px; float:left'></div>
+                    <script>
+                    mapboxgl.accessToken = 'pk.eyJ1IjoiNTk0ZGFtb24iLCJhIjoiY2pseGU3Y2M2MDlqejNycjU1Njd0bmZnaiJ9.1w5e3UwI9UdpiyL92pdVBg';
+                    var map = new mapboxgl.Map({
+                        container: 'map', // container id
+                        style: 'mapbox://styles/mapbox/light-v9', // stylesheet location
+                        center: [151.004105, -33.813002], // starting position [lng, lat]
+                        pitch: 45,
+                        bearing: -17.6,
+                        zoom: 9 // starting zoom
+                    });
+
+                    map.on('load', function() {
+
+                        map.addLayer({
+                            "id": "data",
+                            "type": "fill-extrusion",
+                            "source": {
+                                'type': 'geojson',
+                                'data': data
+                            },
+                                'paint': {
+                                    'fill-extrusion-color' : {
+                                        'property': 'MP_F',
+                                        "stops":[
+                                            [0, 'white'],
+                                            [1, 'black'],
+                                            [1.00001, 'salmon']
+                                        ]
+                                    },
+
+                                    'fill-extrusion-height' : {
+                                        'property': 'MT',
+                                        "stops":[
+                                            [0, 0],
+                                            [2042, 20420]
                                             ]
-                                        },
-
-                                        'fill-extrusion-height' : {
-                                            'property': 'MT',
-                                            "stops":[
-                                                [0, 0],
-                                                [2042, 20420]
-                                             ]
-                                        },
-                                        'fill-extrusion-opacity': 0.7
-                                    }
-                            });
+                                    },
+                                    'fill-extrusion-opacity': 0.7
+                                }
                         });
+                    });
 
 
-                    </script>
+                </script>
 
                 <div class="map2" id="map2" style='width:50%; height:400px; margin-left:50%'></div>
                     <script>

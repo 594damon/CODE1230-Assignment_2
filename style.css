@@ -1,6 +1,13 @@
 body{
-	color:#d0d3d4;
+	
 }
+
+#HOME{
+	background-color:#FFFFFF;}
+#ANALYSIS{
+	background-color:#17202a;}
+#REFERENCE{
+	background-color:#17202a;}
 /*---------home--------*/
 .home-text-image-in{
 	/*z-index: 1;*/
@@ -20,37 +27,42 @@ body{
 .sect1{
 	margin-left:5px;
     margin-right:5px;
-    border: 3px solid red;
+    /*border: 3px solid red;*/
 /*    position: absolute;*/
 }
 
+.sect1 .namehometop{
+	font-family:"Comic Sans MS", cursive, sans-serif;
+	font-style:bold;
+	font-size: 40px;
+}
+.sect1 .namehomemid{
+	margin-left:100px; 
+	font-family:"Comic Sans MS", cursive, sans-serif;
+	font-style:bold;
+	font-size: 40px;
+}
+.sect1 .namehomebot{
+	margin-left:450px; 
+	font-family:"Comic Sans MS", cursive, sans-serif;
+	font-style:bold;
+	font-size: 40px;
+}
+
 .topic1{
-	border: 2px solid gray;
-	width:500px;
+/*	border: 2px solid gray;*/
+	width:600px;
 	height:200px;
 	/*float:left;*/
 }
 
 .gender-watch{
 	float:right;
-	margin-right: 300px;
+	margin-right: 400px;
 	margin-top: -250px;
 	transform: rotate(-90deg);
 }
 
-.nav-right{
-	position:fixed;
-	z-index: 100;
-	cursor:pointer;
-	border: 2px solid green;
-	width:100px;
-	height:100px;
-	right: 100px;
-	top: 65px;
-	display:table;
-	float:right;
-	position:fixed;
-}
 
 .sect2{
 	margin-left:80px;
@@ -63,7 +75,7 @@ body{
 	margin-left:10px;
 	width:26px;
 	height:153px;
-	border: 2px solid pink;
+	/*border: 2px solid pink;*/
 }
 
 
@@ -72,6 +84,32 @@ body{
 
 
 /*---------content---------*/
+h1{
+	transform: rotate(90deg);
+	text-decoration: underline;
+	font-family: "Times New Roman", Times, sans-serif;
+	font-style:bold;
+	font-size: 20px;
+	text-align: justify;
+	font-style:bold;
+	margin-top: -90px;
+}
+
+h2{
+/*	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;*/
+	font-style:bold;
+	font-size: 30px;
+	margin-left: 200px;
+}
+
+.art1{
+	margin-left: 200px;
+	width:600px;
+	word-wrap: break-word;
+	text-align: left;
+}
+
+
 /*---------mapbox---------*/
 .map {
 	font:12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
@@ -139,4 +177,31 @@ body{
 	border: 3px solid purple;
 	height:400px;
     width:400px;
+}
+
+
+/*---------NAV--------*/
+
+nav li{
+padding: 5px 20px;
+margin-left: 10px;
+
+ }
+ 
+#aother {
+    color: white;
+}
+#ahome{
+	color:black;
+}
+
+.nav-right{
+	position:fixed;
+	z-index: 100;
+	cursor:pointer;
+	right: 100px;
+	top: 65px;
+	display:table;
+	float:right;
+	position:fixed;
 }
