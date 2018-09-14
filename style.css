@@ -90,8 +90,6 @@ h1{
 	font-family: "Times New Roman", Times, sans-serif;
 	font-style:bold;
 	font-size: 20px;
-	text-align: justify;
-	font-style:bold;
 	margin-top: -90px;
 }
 
@@ -107,6 +105,10 @@ h2{
 	width:600px;
 	word-wrap: break-word;
 	text-align: left;
+}
+
+p{
+	font-size: 20px;
 }
 
 
