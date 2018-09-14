@@ -153,6 +153,10 @@ ul{
 .container h5{
 	color:white;
 }
+.container h6{
+	color:white;
+	font-size: 60px;
+}
 
 
 .row{
