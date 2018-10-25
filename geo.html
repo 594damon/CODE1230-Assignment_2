@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html>
-<body>map.on('load', function() {
+<body>
+                <div class="GEO" id="GEO" style='width:50%; height:400px; margin-left:50%'></div>
+                    <script>
+                        mapboxgl.accessToken = 'pk.eyJ1IjoiNTk0ZGFtb24iLCJhIjoiY2pseGU3Y2M2MDlqejNycjU1Njd0bmZnaiJ9.1w5e3UwI9UdpiyL92pdVBg';
+                        var GEO = new mapboxgl.Map({
+                            container: 'GEO', // container id
+                            style: 'mapbox://styles/mapbox/light-v9', // stylesheet location
+                            center: [151.004105, -33.813002], // starting position [lng, lat]
+                            pitch: 45,
+                            bearing: -17.6,
+                            zoom: 9 // starting zoom
+                        });
+    map.on('load', function() {
 
     map.addLayer({
         "id": "data",
