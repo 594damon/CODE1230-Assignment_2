@@ -1,46 +1,51 @@
 <!DOCTYPE html>
 <html>
 <body>
-                <div class="GEO" id="GEO" style='width:50%; height:400px; margin-left:50%'></div>
+                <div class="data3" id="data3" style='width:50%; height:400px; margin-left:50%'></div>
                     <script>
                         mapboxgl.accessToken = 'pk.eyJ1IjoiNTk0ZGFtb24iLCJhIjoiY2pseGU3Y2M2MDlqejNycjU1Njd0bmZnaiJ9.1w5e3UwI9UdpiyL92pdVBg';
-                        var GEO = new mapboxgl.Map({
-                            container: 'GEO', // container id
+                        var datathree = new mapboxgl.Map({
+                            container: 'data3', // container id
                             style: 'mapbox://styles/mapbox/light-v9', // stylesheet location
                             center: [151.004105, -33.813002], // starting position [lng, lat]
                             pitch: 45,
                             bearing: -17.6,
                             zoom: 9 // starting zoom
                         });
-    GEO.on('load', function() {
 
-    GEO.addLayer({
-        "id": "data",
-        "type": "fill-extrusion",
-        "source": {
-            'type': 'geojson',
-            'data': './GEO.geojson'
-        },
-        'layout': {
-            'visibility': 'visible'
-            },
-        'paint': {
-                'fill-extrusion-color' : {
-                    'property': 'colour',
-                    'type': 'identity'
-                },
-                'fill-extrusion-height' : {
-                    'type': 'identity',
-                    'property': 'height'
-                },
-                'fill-extrusion-base' : {
-                    'type': 'identity',
-                    'property': 'base_height'
-                },
-                 'fill-extrusion-opacity': 1
-            }
 
-    });
-});
+                        datathree.on('load', function() {
+
+                            datathree.addLayer({
+                                "id": "data3",
+                                "type": "fill-extrusion",
+                                "source": {
+                                    'type': 'geojson',
+                                    'data': './GEO.geojson'
+                                },
+                                    'layout': {
+                                        'visibility' :'visible'
+                                        },
+                                    'paint': {
+                                        'fill-extrusion-color' : {
+                                            'property': 'color',
+                                            'type':'identity'
+
+                                        },
+
+                                        'fill-extrusion-height' : {
+                                            'property': 'height',
+                                            'type':'identity'
+
+                                        },
+
+                                        'fill-extrusion-base' : {
+                                            'property': 'base_height',
+                                            'type':'identity'
+
+                                        'fill-extrusion-opacity': 0.7
+                                    }
+                            });
+                        });
 </body>
 </html>
