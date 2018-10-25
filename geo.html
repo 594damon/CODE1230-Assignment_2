@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>map.on('load', function() {
+
+    map.addLayer({
+        "id": "data",
+        "type": "fill-extrusion",
+        "source": {
+            'type': 'geojson',
+            'data': './GEO.geojson'
+        },
+        'layout': {
+            'visibility': 'visible'
+            },
+        'paint': {
+                'fill-extrusion-color' : {
+                    'property': 'colour',
+                    'type': 'identity'
+                },
+                'fill-extrusion-height' : {
+                    'type': 'identity',
+                    'property': 'height'
+                },
+                'fill-extrusion-base' : {
+                    'type': 'identity',
+                    'property': 'base_height'
+                },
+                 'fill-extrusion-opacity': 1
+            }
+
+    });
+});
+</body>
+</html>
