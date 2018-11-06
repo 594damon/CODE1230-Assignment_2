@@ -13,7 +13,7 @@
 </head>
 <body id="ANALYSIS">
 
-<center><iframe src="https://3dwarehouse.sketchup.com/embed.html?mid=6f58a4b1-24ea-4c98-babc-cb641ff5006b" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="580" height="326" allowfullscreen></iframe></center>
+<!-- <center><iframe src="https://3dwarehouse.sketchup.com/embed.html?mid=6f58a4b1-24ea-4c98-babc-cb641ff5006b" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="580" height="326" allowfullscreen></iframe></center> -->
 
     <div class="container">
         <nav class="nav-right">
@@ -24,18 +24,17 @@
             <li><a id="aother" href="geo.html">On site</a></li>
             <li><a id="aother" href="reference.html">Reference</a></li>
         </nav>
-                <div class="data3" id="data3" style='width:50%; height:400px; margin-left:50%'></div>
+                <div class="map" id="map" style='width:50%; height:400px; float:left'></div>
                     <script>
-                        mapboxgl.accessToken = 'pk.eyJ1IjoiNTk0ZGFtb24iLCJhIjoiY2pseGU3Y2M2MDlqejNycjU1Njd0bmZnaiJ9.1w5e3UwI9UdpiyL92pdVBg';
-                        var datathree = new mapboxgl.Map({
-                            container: 'data3', // container id
-                            style: 'mapbox://styles/mapbox/light-v9', // stylesheet location
-                            center: [151.004105, -33.813002], // starting position [lng, lat]
-                            pitch: 45,
-                            bearing: -17.6,
-                            zoom: 9 // starting zoom
-                        });
-
+                    mapboxgl.accessToken = 'pk.eyJ1IjoiNTk0ZGFtb24iLCJhIjoiY2pseGU3Y2M2MDlqejNycjU1Njd0bmZnaiJ9.1w5e3UwI9UdpiyL92pdVBg';
+                    var map = new mapboxgl.Map({
+                        container: 'map', // container id
+                        style: 'mapbox://styles/mapbox/light-v9', // stylesheet location
+                        center: [151.004105, -33.813002], // starting position [lng, lat]
+                        pitch: 45,
+                        bearing: -17.6,
+                        zoom: 9 // starting zoom
+                    });
 
                         datathree.on('load', function() {
 
@@ -44,7 +43,7 @@
                                 "type": "fill-extrusion",
                                 "source": {
                                     'type': 'geojson',
-                                    'data': './GEO.geojson'
+                                    'data': './data3s.geojson'
                                 },
                                     'layout': {
                                         'visibility' :'visible'
