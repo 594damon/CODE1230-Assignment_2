@@ -3,7 +3,7 @@
 <head>
     <meta charset='utf-8' />
     <title>Display a map</title>
-    <script src='./GEO.geojson'></script>
+    <script src='./data3.geojson'></script>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.css' rel='stylesheet' />
@@ -36,14 +36,14 @@
                         zoom: 9 // starting zoom
                     });
 
-                        datathree.on('load', function() {
+                        map.on('load', function() {
 
-                            datathree.addLayer({
+                            map.addLayer({
                                 "id": "data3",
                                 "type": "fill-extrusion",
                                 "source": {
                                     'type': 'geojson',
-                                    'data': './data3s.geojson'
+                                    'data': './data3.geojson'
                                 },
                                     'layout': {
                                         'visibility' :'visible'
@@ -65,7 +65,7 @@
                                             'property': 'base_height',
                                             'type':'identity'
 
-                                        'fill-extrusion-opacity': 0.7
+                                        'fill-extrusion-opacity': 1
                                     }
                             });
                         });
