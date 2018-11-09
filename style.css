@@ -187,6 +187,18 @@ ul{
 	text-align: left;
 }
 
+.text_mainly .textref_right{
+	border: 3px solid blue
+	position:static;
+	width:400px;
+}
+
+.text_mainly .textref_left{
+	border: 3px solid purple
+	position:static;
+	width:400px;
+}
+
 
 
 .image_left2{
